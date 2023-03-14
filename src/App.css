@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #0A2E36;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  font-size: 16px;
+  background-color: #D7FEE3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo:hover {
+  transform: scale(1.05);
+  transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
+}
+
+nav {
+  height: 80px;
+  background-color: #14CC60;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.boton-categoria {
+  border: none;
+  border-radius: 1rem;
+  margin-left: 3rem;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  color: #0A2E36;
+  font-weight: 900;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.boton-categoria:hover {
+  color: #D7FEE3;
+  transform: rotateZ(-5deg);
+  transition: cubic-bezier(0.15, 1, 0.25, 1) 0.5s;
 }
+
+.boton-carrito {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  font-weight: 900;
+  border-radius: 50%;
+  margin-left: 3rem;
+  cursor: pointer;
+  color: #0A2E36;
+}
+
+.boton-carrito:hover {
+  background-color: #D7FEE3;
+  transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
+}
+
+.carrito {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.item-total {
+  font-size: 1rem;
+}
+
