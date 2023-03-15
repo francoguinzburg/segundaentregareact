@@ -1,25 +1,34 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { pedirDatos } from '../helpers/pedirDatos'
+import ItemList from './ItemList'
+import '../estilos/ItemListContainer.css'
 
-const personajes = [
-    { id:1, imagen:'https://i.redd.it/c4wyz5ramjo91.gif', titulo:'Neco-Arc', precio:1500 },
-    { id:2, imagen:'https://i.redd.it/c4wyz5ramjo91.gif', titulo:'Dori-Dori', precio:1000 }
-];
+const ItemListContainer = () => {
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)    
 
-const ItemListContainer = ( {greeting}) => {
+    useEffect(() => {
     
-    const pedirDatos = () => {
-        return new Promise( (resolve, reject) => {
-            setTimeout(() => {
-                resolve(personajes);
-            }, 2000);
-        });
-    }
-
-    pedirDatos().then((response) => console.log(response));
+    pedirDatos()
+    .then((response) => {
+        setProductos( response )
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+    .finally(() => {
+        setLoading(false)
+    })
+    }, [])
+    
 
   return (
-    <div>
-        <h2>{greeting}</h2>
+    <div className='contenedor-lista-productos'>
+        { loading 
+        ? <h2>Cargando...</h2>
+        : <ItemList items={productos} />
+        }
     </div>
   )
 }
