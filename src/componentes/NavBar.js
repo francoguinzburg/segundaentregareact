@@ -1,6 +1,7 @@
 import React from 'react';
 import Neco from '../imagenes/dibu.png'
 import Carrito from './Carrito';
+import { Link } from 'react-router-dom'
 
 
 function NavBar() {
@@ -8,15 +9,16 @@ function NavBar() {
     <header>
         <nav>
             <div className='contenedor-logo'>
+              <Link to='/'>
                 <img src={Neco} className='logo' href='/' alt='Neco-Arc'/>
+              </Link>
             </div>
             <div>
               <ul>
-                <button className='boton-categoria'>Hombres</button>
-                <button className='boton-categoria'>Mujeres</button>
-                <button className='boton-categoria'>Niños</button>
-                <button className='boton-categoria'>Ofertas</button>
-                <button className='boton-carrito'><Carrito /></button>
+                <Link to='/'><button className='boton-categoria'>Inicio</button></Link>
+                <Link to='/productos/hombre'><button className='boton-categoria'>Hombres</button></Link>
+                <Link to='/productos/mujer'><button className='boton-categoria'>Mujeres</button></Link>
+                <Link><button className='boton-carrito'><Carrito /></button></Link>
               </ul>
             </div>
         </nav>
