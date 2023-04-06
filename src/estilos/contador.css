@@ -25,11 +25,11 @@
 .boton-sumar:hover {
     background-color: #0A2E36;
     color: #74FB9C;
-    transform: scale(0.85);
     transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }
 
 .boton-restar {
+    margin-left: 1rem;
     border-radius: .5rem;
     padding: .5rem;
     border: none;
@@ -42,25 +42,23 @@
 .boton-restar:hover {
     background-color: #0A2E36;
     color: #74FB9C;
-    transform: scale(0.85);
     transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }
 
 .agregar-carrito {
-    border-radius: .5rem;
-    padding: .5rem;
-    border: none;
-    font-weight: 700;
     font-size: 1rem;
-    background-color: #74FB9C;
+    padding: .5rem 3rem .5rem 3rem;
+    border-radius: 1rem;
     cursor: pointer;
-    text-transform: uppercase;
+    background-color: #027230;
+    font-weight: 700;
+    color: #fff;
+    border: none;
 }
 
 .agregar-carrito:hover {
     background-color: #0A2E36;
     color: #74FB9C;
-    transform: scale(0.85);
     transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }
 

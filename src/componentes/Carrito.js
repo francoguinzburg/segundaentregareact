@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../App.css'
-import shop from '../imagenes/bag.svg'
+import { BsCart } from "react-icons/bs";
+import { CartContext } from './CartContext';
+
 
 
 function Carrito() {
+  const { totalCantidad } = useContext(CartContext)
+
+
   return (
     <>
-        <img className='carrito' src={shop} alt='carro' />
-        <span className='item-total'>0</span>
+        <BsCart className='carrito'/>
+        <span className='item-total'>{totalCantidad()}</span>
     </>
   )
 }
