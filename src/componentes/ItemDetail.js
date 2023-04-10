@@ -34,6 +34,14 @@ const ItemDetail = ( {item} ) => {
       <p>Precio: <strong>${item.precio}</strong></p>
       <p>{item.descripcion}</p>
       {/* <ColorPicker setColor={setColor} options={item.colores} /> */}
+      { item.stock <= 5 &&
+        <p><strong>
+          {
+            item.stock === 1
+            ? `Queda solo 1 unidad!`
+            : `Quedan solo ${item.stock} unidades!`
+          }
+        </strong></p> }
 
       {
         isInCart(item.id)

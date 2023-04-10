@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import '../App.css'
 import { BsCart } from "react-icons/bs";
 import { CartContext } from './CartContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,10 +11,10 @@ function Carrito() {
 
 
   return (
-    <>
+    <Link to='/cart'>
         <BsCart className='carrito'/>
         <span className='item-total'>{totalCantidad()}</span>
-    </>
+    </Link>
   )
 }
 
