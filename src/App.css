@@ -5,7 +5,6 @@
 }
 
 html, body {
-  font-size: 16px;
   background-color: #D7FEE3;
 }
 
@@ -212,4 +211,61 @@ nav {
 
 .carro-activo {
   visibility: visible;
+}
+
+.terminar-compra {
+  padding: .5rem 3rem .5rem 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #2f302f;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+}
+
+.terminar-compra:hover {
+  background-color: #1ad41a;
+  letter-spacing: .05rem;
+  transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
+}
+
+.contenedor-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10rem;
+}
+
+
+.form-inputs {
+  padding: .25rem 12rem .25rem .5rem;
+  border-radius: .5rem;
+  border: none;
+  text-decoration: none;
+  color: #00441c;
+  outline: 1px solid #14CC60;
+}
+
+.enviar-form {
+  margin-top: .5rem;
+  background-color: #00441c;
+  padding: .5rem 3rem .5rem 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #ffffff;
+  border: none;
+}
+
+.enviar-form:hover {
+  background-color: #14CC60;
+  letter-spacing: .05rem;
+  transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }
