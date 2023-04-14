@@ -269,3 +269,11 @@ nav {
   letter-spacing: .05rem;
   transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }
+
+.contenedor-orden-num {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}

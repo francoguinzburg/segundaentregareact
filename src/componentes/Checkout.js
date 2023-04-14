@@ -41,7 +41,7 @@ const Checkout = () => {
         const orden = {
             cliente: values,
             items: cart.map((prod) => ({id: prod.id, nombre: prod.titulo, precio: prod.precio, cantidad: prod.cantidad})),
-            total: totalCompra,
+            total: totalCompra(),
             fecha: new Date()
         }
 
@@ -50,12 +50,14 @@ const Checkout = () => {
         const ordersRef = collection(db, 'orders')
 
         addDoc(ordersRef, orden)
-            .then((doc) => console.log(doc.id))
+            .then((doc) => {
+                setOrderId(doc.id)
+            })
     }
 
     if (orderId) {
         return (
-            <div>
+            <div className='contenedor-orden-num'>
                 <h2>Tu orden se registro con exito!</h2>
                 <p>Guarda tu numero de orden: {orderId}</p>
             </div>
