@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useContext } from 'react'
 import { CartContext } from './CartContext'
-import { Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { db } from '../firebase/config'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, doc, getDoc, updateDoc } from 'firebase/firestore'
 
 const Checkout = () => {
-    const { cart, totalCompra } = useContext(CartContext)
+    const { cart, totalCompra, vaciarCarrito } = useContext(CartContext)
     
     const [orderId, setOrderId] = useState(null)
     const [values, setValues] = useState({
@@ -47,11 +47,29 @@ const Checkout = () => {
 
         console.log('Submit', orden)
 
+        const productosRef = collection(db, 'productos')
+
+        cart.forEach((item) => {
+            const docRef = doc(productosRef, item.id)
+
+            getDoc(docRef)
+                .then((doc) => {
+                    if(doc.data().stock >= item.cantidad) {
+                        updateDoc(docRef, {
+                            stock: doc.data().stock - item.cantidad
+                        })
+                    } else {
+                        alert("No hay stock del producto que estas solicitando")
+                    }
+                })
+        });
+
         const ordersRef = collection(db, 'orders')
 
         addDoc(ordersRef, orden)
             .then((doc) => {
                 setOrderId(doc.id)
+                vaciarCarrito()
             })
     }
 
@@ -60,6 +78,7 @@ const Checkout = () => {
             <div className='contenedor-orden-num'>
                 <h2>Tu orden se registro con exito!</h2>
                 <p>Guarda tu numero de orden: {orderId}</p>
+                <Link to='/' className='volver-inicio'>Volver al inicio</Link>
             </div>
         )
     }
