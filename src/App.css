@@ -266,7 +266,7 @@ nav {
 
 .enviar-form:hover {
   background-color: #14CC60;
-  letter-spacing: .05rem;
+  letter-spacing: .15rem;
   transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }
 
@@ -277,4 +277,58 @@ nav {
   align-items: center;
   margin-top: 2rem;
   height: 10rem;
+}
+
+.login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  margin-top: 3rem;
+  text-align: center;
+  background-color: #14cc6125;
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.logear {
+  display: flex;
+  height: 10rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.h2-login {
+  font-size: 1.5rem;
+}
+
+.contenedor-bienvenida {
+  display: flex;
+  width: 20rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: #1ad41a25;
+  border-radius: 0 0 1rem 0;
+}
+
+.deslogearse {
+  margin-top: .5rem;
+  background-color: #47ff94;
+  padding: .5rem 2rem .5rem 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0A2E36;
+  border: none;
+}
+
+.deslogearse:hover {
+  background-color: #440000;
+  color: #ffffff;
+  transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
 }

@@ -3,10 +3,13 @@ import Neco from '../imagenes/dibu.png'
 import Carrito from './Carrito';
 import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext';
+import { LoginContext } from './LoginContext';
 
 
 function NavBar() {
   const { cart } = useContext(CartContext)
+  const { user, logout } = useContext(LoginContext)
+
   return (
     <header>
         <nav>
@@ -24,6 +27,10 @@ function NavBar() {
               </ul>
             </div>
         </nav>
+        <div className='contenedor-bienvenida'>
+          <p className='bienvenido'>Bienvenido <strong>{user.email}</strong></p>
+          <button className='deslogearse' onClick={logout}>Logout</button>
+        </div>
     </header>
   );
 }
