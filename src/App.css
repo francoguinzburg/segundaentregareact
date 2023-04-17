@@ -240,7 +240,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 10rem;
+  height: 20rem;
 }
 
 
@@ -358,4 +358,19 @@ nav {
   background-color: #ffffff;
   color: #1279ff;
   transition: cubic-bezier(0.15, 1, 0.25, 1) 0.2s;
+}
+
+.alerta {
+  padding: .5rem;
+  margin: .25rem;
+  color: #da0000e5;
+  background-color: #ec606050;
+  border: solid 1px #440000;
+  border-radius: .5rem;
+}
+
+.imagen-del-producto {
+  height: 220px;
+  width: 220px;
+  margin: .5rem 0 .5rem 0;
 }

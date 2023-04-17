@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Neco from '../imagenes/dibu.png'
+import Dibu from '../imagenes/dibu.png'
 import Carrito from './Carrito';
 import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext';
@@ -15,7 +15,7 @@ function NavBar() {
         <nav>
             <div className='contenedor-logo'>
               <Link to='/'>
-                <img src={Neco} className='logo' href='/' alt='Neco-Arc'/>
+                <img src={Dibu} className='logo' href='/' alt='Dibu'/>
               </Link>
             </div>
             <div>

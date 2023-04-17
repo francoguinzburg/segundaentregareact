@@ -82,7 +82,7 @@
 .contenedor-productos-detalle {
     display: flex;
     flex-direction: column;
-    height: 45rem;
+    height: 35rem;
     justify-content: space-evenly;
     align-items: center;
     padding: 2rem;

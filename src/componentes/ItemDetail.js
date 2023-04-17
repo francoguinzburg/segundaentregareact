@@ -11,7 +11,6 @@ const ItemDetail = ( {item} ) => {
   const [cantidad, setCantidad] = useState(1);
   // const [color, setColor] = useState(null);
   const { agregarAlCarrito, isInCart } = useContext(CartContext)
-  console.log(isInCart(item.id))
 
   const navigate = useNavigate()
 
@@ -30,7 +29,7 @@ const ItemDetail = ( {item} ) => {
   return (
     <div className='contenedor-productos-detalle'>
       <h3>{item.titulo}</h3>
-      <img src={item.imagen} alt={item.titulo} />
+      <img className='imagen-del-producto' src={item.imagen} alt={item.titulo} />
       <p>Precio: <strong>${item.precio}</strong></p>
       <p>{item.descripcion}</p>
       {/* <ColorPicker setColor={setColor} options={item.colores} /> */}
