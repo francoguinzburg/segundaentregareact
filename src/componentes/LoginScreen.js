@@ -1,10 +1,12 @@
 import { useState, useContext } from 'react'
 import React from 'react'
 import { LoginContext } from './LoginContext'
+import { Link } from 'react-router-dom';
+
+
 
 const LoginScreen = () => {
-    const { user, tryLogin } = useContext(LoginContext)
-    console.log(user)
+    const { login, googleLogin } = useContext(LoginContext)
 
     const [values, setValues] = useState({
         email:'',
@@ -21,7 +23,7 @@ const LoginScreen = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        tryLogin(values)
+        login(values)
     }
 
   return (
@@ -46,7 +48,9 @@ const LoginScreen = () => {
                 name='password'
                 />
                 <button className='enviar-form' type='submit'>Login</button>
+                <Link className='registrar-logear' to='/register'>Registrarme</Link>
             </form>
+            <button className='google-logear' onClick={googleLogin}>Logearme con Google</button>
         </div>
     </div>
   )

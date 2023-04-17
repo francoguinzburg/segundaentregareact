@@ -7,6 +7,7 @@ import Cart from '../componentes/Cart'
 import Checkout from '../componentes/Checkout'
 import LoginScreen from '../componentes/LoginScreen'
 import { LoginContext } from '../componentes/LoginContext'
+import RegisterScreen from '../componentes/RegisterScreen'
 
 const AppRouter = () => {
 const { user } = useContext(LoginContext)
@@ -30,6 +31,7 @@ const { user } = useContext(LoginContext)
             :
             <Routes>
               <Route path='/login' element={ <LoginScreen /> } />
+              <Route path='/register' element={ <RegisterScreen /> } />
               <Route path='*' element={ <Navigate to='/login' /> } />
             </Routes>         
           }   
